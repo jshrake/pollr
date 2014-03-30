@@ -1,0 +1,41 @@
+<section class="jumbotron">
+  <h1>Pollr</h1>
+  <p class="lead">
+    Quick, easy, real-time polls
+  </p>
+  <section ng-controller="CreatePollCtrl as cp">
+
+    <form ng-submit="createPoll()">
+      <section id="poll-question" class="input-group input-group-lg">
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-success" ng-click="cp.createPoll()">
+          <span class="glyphicon glyphicon-stats"></span> Create</button>
+        </span>
+        <input value="pollQuestion" type="text" class="form-control" placeholder="Enter a poll question" ng-model="cp.poll.question" required>
+      </section>
+
+      <section ng-repeat="choice in cp.poll.choices" class="input-group input-group-lg poll-choices">
+        <input type="text" class="form-control" placeholder="Choice..." ng-model="choice">
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-danger" ng-click="cp.deleteChoice(choice)">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </span>
+      </section>
+    </form>
+
+    <form ng-submit="cp.addChoice()">
+      <section class="input-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Add a choice" ng-model="cp.newChoice" required>
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-primary" ng-click="cp.addChoice()" ng-disabled="form.$invalid">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </span>
+      </section>
+    </form>
+    
+  </section>
+</section>
+
+

@@ -1,0 +1,16 @@
+<section ng-controller="DisplayPollCtrl as dp">
+    <h2 id="question">
+	{{dp.question}}
+    </h2>
+	<nvd3-pie-chart
+    	data="dp.choices"
+        id="poll-chart"
+        x="dp.xFunction()"
+        y="dp.yFunction()"
+        showLabels="true"
+        interactive="true"
+        tooltips="true"
+        objectEquality="true">
+        <svg></svg>
+    </nvd3-pie-chart>
+</section>
