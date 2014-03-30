@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global WebSocket */
+/*global WebSocket, d3 */
 'use strict';
 
 module.exports = (function () {
@@ -41,6 +41,13 @@ module.exports = (function () {
     DisplayPollCtrl.prototype.yFunction = function () {
         return function (d) {
             return d.votes + 1;
+        };
+    };
+
+    DisplayPollCtrl.prototype.tooltip = function () {
+        return function (key, x, y) {
+            var votes = x - 1;
+            return votes.toString() + " votes";
         };
     };
 
