@@ -4,7 +4,7 @@
   "description": "",
   "main": "karma.conf.js",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./bootstrap.sh"
   },
   "author": "",
   "license": "MIT",
