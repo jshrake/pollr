@@ -15,7 +15,9 @@ module.exports = (function () {
 
     CreatePollCtrl.prototype.addChoice = function () {
         if (this.newChoice) {
-            this.poll.choices.push(this.newChoice);
+            this.poll.choices.push({
+                'text': this.newChoice
+            });
             this.nextID += 1;
             this.newChoice = '';
         }
@@ -30,7 +32,9 @@ module.exports = (function () {
             that = this;
         this.addChoice();
         poll.question = this.poll.question;
-        poll.choices = this.poll.choices;
+        poll.choices = this.poll.choices.map(function (choice) {
+            return choice.text;
+        });
         poll.$save().then(function () {
             that.location.path(poll.id);
             that.poll.question = '';

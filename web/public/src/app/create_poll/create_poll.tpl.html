@@ -15,7 +15,7 @@
       </section>
 
       <section ng-repeat="choice in cp.poll.choices" class="input-group input-group-lg poll-choices">
-        <input type="text" class="form-control" placeholder="Choice..." ng-model="choice">
+        <input type="text" class="form-control" placeholder="Choice..." ng-model="choice.text">
         <span class="input-group-btn">
           <button type="button" class="btn btn-danger" ng-click="cp.deleteChoice(choice)">
             <span class="glyphicon glyphicon-remove"></span>
