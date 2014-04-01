@@ -1,0 +1,26 @@
+{
+  "name": "pollr-web",
+  "version": "0.0.0",
+  "description": "",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "~3.5.5",
+    "browserify": "~3.32.1",
+    "bower": "~1.2.8",
+    "karma-script-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.1.5",
+    "karma-coffee-preprocessor": "~0.1.3",
+    "requirejs": "~2.1.11",
+    "karma-requirejs": "~0.2.1",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "karma": "~0.10.9"
+  }
+}
