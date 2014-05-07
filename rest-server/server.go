@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/codegangsta/martini"
+	"github.com/go-martini/martini"
 	"github.com/jshrake/pollr/lib"
 	"github.com/martini-contrib/cors"
 	"github.com/martini-contrib/sessions"

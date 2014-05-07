@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/codegangsta/martini"
 	"github.com/garyburd/redigo/redis"
+	"github.com/go-martini/martini"
 	"github.com/gorilla/websocket"
 	"github.com/jshrake/pollr/lib"
 )
