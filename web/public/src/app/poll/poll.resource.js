@@ -8,7 +8,7 @@ require('angular');
 module.exports = angular.module('pollr.PollResource', [])
     .factory('Poll', ['$resource',
         function ($resource) {
-            return $resource("http://localhost:8081/polls/:id", {
+            return $resource("api/polls/:id", {
                 id: '@id'
             }, {});
         }

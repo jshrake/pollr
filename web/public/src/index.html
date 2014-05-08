@@ -14,28 +14,11 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53386fcf664ba3d8"></script>
-      <!-- AddThis Smart Layers BEGIN -->
-    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-    <script type="text/javascript">
-        addthis.layers({
-            'theme' : 'transparent',
-            'share' : {
-                'position' : 'left',
-                'services' : 'facebook,twitter,google_plusone_share,email,more',
-                'postShareTitle' : 'Thanks for sharing!',
-                'postShareFollowMsg' : 'Follow us',
-                'postShareRecommendedMsg' : 'Recommended for you',
-                'desktop' : true,
-                'mobile' : true
-        }
-        });
-    </script>
-<!-- AddThis Smart Layers END -->
-    <script src="/vendor/jquery/dist/jquery.js"></script>
-    <link rel="stylesheet" href="/vendor/bootstrap-sass/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/vendor/nvd3/nv.d3.css"/>
-    <link rel="stylesheet" href="/index.css"/>
+
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap-sass/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/nvd3/nv.d3.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/index.css"/>
     <!-- endbuild -->
     <base href="/">
   </head>
@@ -69,7 +52,24 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     <script src="/index.js"></script>
-
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53386fcf664ba3d8"></script>
+      <!-- AddThis Smart Layers BEGIN -->
+    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+    <script type="text/javascript">
+        addthis.layers({
+            'theme' : 'transparent',
+            'share' : {
+                'position' : 'left',
+                'services' : 'facebook,twitter,google_plusone_share,email,more',
+                'postShareTitle' : 'Thanks for sharing!',
+                'postShareFollowMsg' : 'Follow us',
+                'postShareRecommendedMsg' : 'Recommended for you',
+                'desktop' : true,
+                'mobile' : true
+        }
+        });
+    </script>
+<!-- AddThis Smart Layers END -->
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <!-- endbower -->

@@ -6,7 +6,8 @@ module.exports = (function () {
 
     function DisplayPollCtrl($scope, $location, $routeParams, $http, $log, Poll) {
         // Make a web socket connection to the correct poll
-        var ws = new WebSocket("ws://localhost:12345/polls/" + $routeParams.pollId),
+
+        var ws = new WebSocket("ws://" + $location.host() + "/ws/polls/" + $routeParams.pollId),
             that = this;
 
         Poll.get({
@@ -19,7 +20,7 @@ module.exports = (function () {
         $scope.$on('elementClick.directive', function (event, data) {
             $log.info(event);
             $log.info(data);
-            $http.put('http://localhost:8081/polls/' + $routeParams.pollId, {
+            $http.put('api/polls/' + $routeParams.pollId, {
                 choiceId: data.index
             });
         });
