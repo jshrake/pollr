@@ -9,19 +9,16 @@ import (
 	"github.com/jshrake/pollr/lib"
 )
 
-var (
-	hostUri  = flag.String("addr", "localhost:12345", "host address")
-	dbUri    = flag.String("db", "localhost:27017", "database address")
-	redisUri = flag.String("redis", "localhost:6379", "redis address")
-)
+var configFile = flag.String("config", "dev-config.json", "config file")
 
 func main() {
 	flag.Parse()
+	config := pollr.NewConfig(*configFile)
 	m := martini.Classic()
-	context := pollr.NewContext(*dbUri, *redisUri)
+	context := pollr.NewContext(config.Database.Address, config.Redis.Address)
 	defer context.CleanUp()
 	hubManager := NewPollHubManager(context)
 	m.Map(hubManager)
 	m.Get("/polls/:id", AddConnectionToPollHub)
-	log.Fatal(http.ListenAndServe(*hostUri, m))
+	log.Fatal(http.ListenAndServe(config.WsAddress, m))
 }
